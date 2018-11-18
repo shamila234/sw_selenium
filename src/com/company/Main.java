@@ -16,18 +16,17 @@ public class Main {
         System.setProperty("webdriver.chrome.driver", "../ChromeDriver/chromedriver");
         WebDriver driver = new ChromeDriver();
         driver.get("http://www.google.com");
-        WebElement element = driver.findElement(By.name("q"));
 
-        List<String> searchValues = Arrays.asList("Hello", "Words","Alphabet");
+        //List with different words for search
+        List<String> searchValues = Arrays.asList("Words","Alphabet");
 
         for (String value : searchValues) {
+            WebElement element = driver.findElement(By.name("q"));
             element.clear();
             element.sendKeys(value);
+            element.submit();
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         }
-
-        element.submit();
         driver.close();
     }
-
 }
