@@ -1,2 +1,2 @@
-# sw_selenium
-Simple Selenium project
+# sw_selenium_project
+selenium project
